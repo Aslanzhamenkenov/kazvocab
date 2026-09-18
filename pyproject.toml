@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kazvocab"
+version = "0.1.0"
+description = "Тренажёр казахских слов с интервальным повторением"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Aslan Zhamenkenov" }]
+keywords = ["kazakh", "vocabulary", "spaced-repetition", "leitner", "language-learning"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: Kazakh",
+    "Natural Language :: Russian",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Education",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
+[project.scripts]
+kazvocab = "kazvocab.cli:main"
+
+[project.urls]
+Repository = "https://github.com/Aslanzhamenkenov/kazvocab"
+
+[tool.setuptools.packages.find]
+include = ["kazvocab*"]
+
+[tool.setuptools.package-data]
+kazvocab = ["../data/*.json"]
